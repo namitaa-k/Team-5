@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // You can add your authentication logic here.
+            // For this example, let's assume a successful login if username is "example" and password is "password123".
+            if (username === "example" && password === "password123") {
+                document.getElementById("successMessage").style.display = "block";
+                document.getElementById("errorMessage").style.display = "none";
+            } else {
+                document.getElementById("successMessage").style.display = "none";
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Login Form</h1>
+
+    <form onsubmit="validateLogin(); return false;">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <div id="successMessage" style="display: none; color: green;">
+        Login successful! Welcome, user.
+    </div>
+
+    <div id="errorMessage" style="display: none; color: red;">
+        Login failed. Please check your username and password.
+    </div>
+</body>
+</html>
